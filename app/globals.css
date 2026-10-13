@@ -50,6 +50,9 @@
 
 html { scroll-behavior: smooth; }
 body { font-family: var(--font-sans); }
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
