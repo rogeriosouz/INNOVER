@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = { title: "NOVA — Estúdio Criativo", description: "Identidades, experiências e presenças digitais." };
+export const metadata: Metadata = { title: "INNOVER — Marketing", description: "Estratégia, identidade visual e experiências digitais." };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
