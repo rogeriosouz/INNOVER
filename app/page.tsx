@@ -52,21 +52,19 @@ export default function Home() {
         <div aria-hidden="true" className="absolute inset-y-0 left-[5.5vw] w-0 border-l-2 border-white/75 max-md:left-[6vw]" />
         <div aria-hidden="true" className="absolute top-[18%] right-[-12%] h-[54vw] max-h-[750px] w-[54vw] max-w-[750px] rounded-full bg-white/5 blur-3xl" />
         <h1 className="relative z-10 max-w-[1100px] text-center text-[clamp(4rem,7.7vw,8rem)] leading-[1.04] font-black tracking-[-.055em] max-md:text-[14vw] max-md:tracking-[-.07em]"><span className="block">UM TÍTULO</span><span className="block">CHAMATIVO</span></h1>
-        <div role="region" aria-label="Serviços e tecnologias" className="group absolute right-[9vw] bottom-24 left-[9vw] z-10 overflow-hidden border-y border-white/25 bg-[#151a20]/25 py-4 [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)] max-md:right-[8vw] max-md:bottom-20 max-md:left-[8vw] max-md:py-3">
+        <div role="region" aria-label="Serviços e tecnologias" className="group absolute right-[9vw] bottom-8 left-[9vw] z-10 overflow-hidden border-y border-white/35 bg-[#151a20]/35 py-6 [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)] max-md:right-[8vw] max-md:bottom-6 max-md:left-[8vw] max-md:py-5">
           <div className="flex w-max animate-[marquee_28s_linear_infinite] items-center motion-reduce:animate-none group-hover:[animation-play-state:paused]">
             {[0, 1].map((copy) => (
               <div key={copy} aria-hidden={copy === 1} className="flex shrink-0 items-center gap-10 pr-10 max-md:gap-7 max-md:pr-7">
                 {tickerItems.map((item) => (
-                  <span key={item} className="flex shrink-0 items-center gap-10 text-xs font-semibold uppercase tracking-[.17em] text-white/80 max-md:gap-7 max-md:text-[.65rem]">
-                    {item}<span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-white/50" />
+                  <span key={item} className="flex shrink-0 items-center gap-10 text-sm font-bold uppercase tracking-[.15em] text-white/90 max-md:gap-7 max-md:text-xs">
+                    {item}<span aria-hidden="true" className="h-2 w-2 rounded-full bg-white/60" />
                   </span>
                 ))}
               </div>
             ))}
           </div>
         </div>
-        <a href="#sobre" className="absolute bottom-10 left-[9vw] z-10 flex items-center gap-3 text-[.68rem] font-semibold uppercase tracking-[.18em] text-white/80 transition-colors hover:text-white max-md:left-[9vw]"><span className="h-px w-8 bg-white/70" />Role para explorar <span aria-hidden="true" className="text-lg leading-none">↓</span></a>
-        <span className="absolute right-[9vw] bottom-11 text-[.68rem] font-semibold tracking-[.18em] text-white/60 max-md:hidden">01 / 03</span>
       </section>
 
       <section id="sobre" className="relative bg-[linear-gradient(105deg,#12171c,#5d676d)] px-[7vw] pt-32 pb-32 text-white max-md:px-[6vw] max-md:pt-20 max-md:pb-20">
