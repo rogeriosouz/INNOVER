@@ -2,24 +2,29 @@
 @import "tailwindcss";
 
 :root {
-  --background: #dedede;
-  --foreground: #171b20;
-  --card: #f8f8f7;
-  --card-foreground: #171b20;
-  --popover: #f8f8f7;
-  --popover-foreground: #171b20;
-  --primary: #171b20;
-  --primary-foreground: #ffffff;
-  --secondary: #e9e9e9;
-  --secondary-foreground: #171b20;
-  --muted: #e1e1e1;
-  --muted-foreground: #5f686e;
-  --accent: #9d91e8;
-  --accent-foreground: #171b20;
+  color-scheme: dark;
+  --background: #0b1018;
+  --foreground: #f2f5fa;
+  --surface-1: #111a26;
+  --surface-2: #172231;
+  --surface-3: #1d2a3a;
+  --accent: #aebeff;
+  --accent-hover: #cad3ff;
+  --card: var(--surface-2);
+  --card-foreground: var(--foreground);
+  --popover: var(--surface-2);
+  --popover-foreground: var(--foreground);
+  --primary: var(--accent);
+  --primary-foreground: #0b1018;
+  --secondary: var(--surface-3);
+  --secondary-foreground: var(--foreground);
+  --muted: var(--surface-3);
+  --muted-foreground: #aab8c9;
+  --accent-foreground: #0b1018;
   --destructive: #b42318;
-  --border: #30363d;
-  --input: #a3a9ad;
-  --ring: #9d91e8;
+  --border: #334154;
+  --input: #9caec3;
+  --ring: var(--accent);
   --radius: 1.25rem;
 }
 
@@ -49,11 +54,25 @@
 }
 
 html { scroll-behavior: smooth; }
-body { font-family: var(--font-sans); }
-@keyframes marquee {
-  to { transform: translateX(-50%); }
+body { background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
+[data-project-detail] { display: none; }
+[data-project-card].project-is-open { visibility: hidden; }
+[data-project-modal] {
+  --overlay-alpha: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  background-color: color-mix(in srgb, #080d14 var(--overlay-alpha), transparent);
 }
+[data-project-modal][open] { --overlay-alpha: 96%; pointer-events: auto; }
+[data-project-modal]:not([open]) [data-project-card],
+[data-project-modal]:not([open]) [data-project-modal-header] { visibility: hidden; }
+[data-project-modal] [data-project-card] { width: 100%; }
+[data-project-modal] [data-project-cover] { height: min(58vh, 580px); }
+[data-project-modal] [data-project-detail] { display: block; }
+[data-project-modal]::backdrop { background: transparent; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
 }
