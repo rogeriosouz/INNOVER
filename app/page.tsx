@@ -11,10 +11,25 @@ import ServicesSection from "./components/services-section";
 import { SiteJourney } from "./components/site-journey";
 import { SiteFooter } from "./components/site-footer";
 import { StatementSection } from "./components/statement-section";
+import { logout } from "./login/actions";
+import { hasValidSession } from "./lib/auth";
+import { redirect } from "next/navigation";
 
-export default function Home() {
+export default async function Home() {
+  if (!(await hasValidSession())) {
+    redirect("/login");
+  }
+
   return (
     <main className="relative">
+      <form action={logout} className="fixed right-4 top-4 z-50 sm:right-6 sm:top-6">
+        <button
+          type="submit"
+          className="rounded-full border border-white/20 bg-slate-950/70 px-4 py-2 text-xs font-bold text-white shadow-lg backdrop-blur transition hover:bg-slate-800"
+        >
+          Sair
+        </button>
+      </form>
       <SiteJourney />
       <ContentReveals />
       <HeroSection />
